@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: rsshub
+    env: node
+    plan: free
+    buildCommand: mkdir -p assets/build && pnpm run build
+    startCommand: pnpm start
+    envVars:
+      - key: BUILD_STATIC_SITE
+        value: false
